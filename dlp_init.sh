@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sudo apt install -y libsm6 libxext6 ffmpeg libfontconfig1 libxrender1 libgl1-mesa-glx
+sudo apt-get update && sudo apt install -y libsm6 libxext6 ffmpeg libfontconfig1 libxrender1 libgl1-mesa-glx
 
 sudo apt install git python3.10-venv -y
 
