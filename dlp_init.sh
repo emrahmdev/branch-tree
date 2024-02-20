@@ -1,10 +1,13 @@
 #!/bin/sh
 
-wget -q -O diffusion-lab-pro.zip https://github.com/emrahmdev/branch-tree/raw/main/diffusion-lab-pro.zip
+sudo apt install -y libsm6 libxext6 ffmpeg libfontconfig1 libxrender1 libgl1-mesa-glx
 
-until [ -d /workspace/stable-diffusion-webui/extensions-builtin/ ]
-do
-     sleep 5
-done
+sudo apt install git python3.10-venv -y
 
-unzip diffusion-lab-pro.zip -d /workspace/stable-diffusion-webui/extensions-builtin/
+git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui 
+
+cd stable-diffusion-webui
+
+python3.10 -m venv venv
+
+nohup ./webui.sh &
